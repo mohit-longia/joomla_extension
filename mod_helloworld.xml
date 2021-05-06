@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="upgrade">
+    <name>Pay Fast !</name>
+    <author>Mohit</author>
+    <version>1.0.0</version>
+    <description>A simple Pay Fast! module.</description>
+    <files>
+        <filename>mod_helloworld.xml</filename>
+        <filename module="mod_helloworld">mod_helloworld.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>css/custom.css</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+        <filename>install.mysql.utf8.sql</filename>
+        <filename>uninstall.mysql.utf8.sql</filename>
+</files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                
+                    <field name="sandbox_url"
+                           type="text" 
+                           label="Enter Url Here" 
+                           description="Enter Url Here"
+                    />
+                    
+                    <field 
+                        name="merchant_id" 
+                        type="text" 
+                        label="Enter merchant ID" 
+                        description="Enter Merchant Id Here"
+                    />
+                    <field 
+                        name="merchant_key" 
+                        type="text" 
+                        label="Enter merchant Key" 
+                        description="Enter Merchant Key Here"
+                    />
+
+            </fieldset>
+        </fields>
+
+    </config>
+
+    <install>
+     <sql>
+         <file driver="mysql" charset="utf8">install.mysql.utf8.sql</file>
+         
+     </sql>
+</install>
+
+<uninstall>
+     <sql>
+         <file driver="mysql" charset="utf8">uninstall.mysql.utf8.sql</file>
+         
+     </sql>
+</uninstall>
+
+</extension>
